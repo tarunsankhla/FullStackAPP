@@ -94,16 +94,20 @@ router.get('/edit/:id',ensureAuth,async(req,res)=>{
 router.put('/:id',ensureAuth,async(req,res)=>{
 
     try {
+        console.log('1');
         const story = await Story.findById(req.params.id).lean();
         if(!story){
+            console.log('2');
             res.render('error/404')
         }
 
-        
+        console.log('3');
         if(story.user != req.user.id){
+            console.log('4');
             res.render('stories/')    
         }else{
-            story = await Story.findOneAndUpdate({_id: req.params.id},req.body, {
+            console.log('5');
+            Story.findOneAndUpdate({_id: req.params.id},req.body, {
                 new: true,
                 runValidators:true
             })

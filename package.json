@@ -23,12 +23,13 @@
     "express-session": "^1.17.1",
     "method-override": "^3.0.0",
     "moment": "^2.29.1",
-    "mongoose": "^5.12.4",
+    "mongoose": "^5.13.13",
     "morgan": "^1.10.0",
     "multer": "^1.4.3",
     "passport": "^0.4.1",
     "passport-google-oauth20": "^2.0.0",
-    "read-excel-file": "^5.2.20"
+    "read-excel-file": "^5.2.20",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
     "cross-env": "^7.0.3",

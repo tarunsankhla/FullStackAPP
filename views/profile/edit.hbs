@@ -1,4 +1,28 @@
-<h5>profile edit {{user._id}}</h5>
-<h2>Name: </h2>{{user.displayName}}
-<h2>Image: </h2>
- <img src="{{user.image}}" class="circle responsive-img img-small">
+<h3>profile edit of User ID: </h3> <h4>{{user._id}}</h4>
+
+<h3>Edit Profile</h3>
+<div class="row">
+    <form action="/profile/edit/{{user._id}}" method="POST" class="col s12">
+        <input type="hidden" name="_method" value="PUT">
+        <div class="row">
+            <div class="input-field">
+                <input type="text" id="displayName"  name="displayName" value="{{user.displayName}}">
+                <label for="title">Name</label>
+            </div>
+        </div>
+      
+
+        <div class="row">
+            <div class="input-field">
+                <h5>Profile Picture:</h5>
+                 <img src="{{user.image}}" class="circle responsive-img img-small">
+
+            </div>
+        </div>
+
+        <div class="row">
+            <input type="submit" value="Update" class="btn">
+            <a href="/dashboard" class="btn orange">Cancel</a>
+        </div>
+    </form>
+</div>
